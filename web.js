@@ -26,8 +26,11 @@ io.sockets.on('connection', function(socket){
         registeredusers[userdata]["password"] = passdata;
         registeredusers[userdata]["plans"] = [];
         registeredusers[userdata]["moods"] = [];
-        registeredusers[userdata]["friends"] = [];
+        registeredusers[userdata]["friends"] = {};
         registeredusers[userdata]["Count"] = 0;
+        registeredusers[userdata]["friends"]["req"] = [];
+        registeredusers[userdata]["friends"]["list"] = [];
+        registeredusers[userdata]["friends"]["chat"] = [];
     };
     
     function updatePlan(priordata, titledata, bodydata, user) {
@@ -95,6 +98,8 @@ io.sockets.on('connection', function(socket){
     
     function LogFunction(userdata, passdata) {
         
+        //console.log(registeredusers[userdata]["friends"]["req"]);
+        
         var results = [false, " "];
         
         if (registeredusers[userdata] != null) {
@@ -115,6 +120,38 @@ io.sockets.on('connection', function(socket){
         
     };
     
+    function validateBar(search, user) {
+             
+        var results = [false, "reason"]
+        
+        if (search.length > 0) {
+            if (registeredusers[search] != null) {
+                if (registeredusers[user]["friends"]["list"][search] != null) {
+                    results[0] = false;
+                    results[1] = "Already friends";
+                    return results;
+                } else {
+                    results[0] = true;
+                    results[1] = "Successfuly requested friend";
+                    
+                    console.log(search);
+                    registeredusers[search]["friends"]["req"].push(user)
+                    
+                    return results;
+                };
+            } else {
+                results[0] = false;
+                results[1] = "Not a valid user";
+                return results;
+            };
+        } else {
+            results[0] = false;
+            results[1] = "Please enter a username";
+            return results;
+        };
+    
+    };
+    
     socket.on('regrequest',function(userdata, passdata){
 		 var result = RegFunction(userdata, passdata);
          
@@ -124,6 +161,10 @@ io.sockets.on('connection', function(socket){
     socket.on('logrequest',function(userdata, passdata){
         var result = LogFunction(userdata, passdata) ;
         var usrtab = registeredusers[userdata]; 
+        
+        //console.log(usrtab["friends"]["req"]);
+        //console.log(usrtab);
+        
         socket.emit('logresult', result, userdata, usrtab);
 	});
     
@@ -144,4 +185,12 @@ io.sockets.on('connection', function(socket){
          
         socket.emit('Moodupdate', result);
 	});
+    
+    socket.on('checkBar',function(search, user){
+        var result = validateBar(search, user);
+                
+        socket.emit('checkBarres', result);
+	});
+    
+    
 });
