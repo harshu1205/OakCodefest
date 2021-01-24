@@ -726,6 +726,214 @@ section {
   background: #94e8c4;
 }
 
+#wrapper #frform_wrapper {
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    background-color: #bcf7e3;
+    border-radius: 50px;
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 8%;
+    transition: all 0.5s ease-out;
+}
+      
+#wrapper #frform_wrapper #fr {
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 100%;
+    grid-gap: 3%;
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+}          
+
+#wrapper #frform_wrapper #fr #flist {
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-auto-rows: 20% ;
+    grid-gap: 2%;
+    position: absolute;
+    overflow: scroll;
+    top: 18%;
+}    
+      
+#wrapper #sec-Friends .input_container {
+    width: 80%;
+    height: 10%;
+    top: 40%;
+    left: 10%;
+    background-color: #bcf7e3;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    position: absolute;
+}      
+      
+#wrapper #sec-Friends .input_container:hover {
+    background-color: #82c7b2;
+}
+
+#wrapper #sec-Friends .input_container,
+#input_submit {
+    height: 10%;
+    border-radius: 30px;
+    width: 80%;
+}                 
+
+#wrapper #sec-Friends .input_field {
+    color: black;
+    background-color: inherit;
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-left: 5px;
+}   
+
+#wrapper #frform_wrapper #fr #item {
+    height: 100%;
+    width: 100%
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-template-columns: 66% 15% 15%;
+    grid-gap: 2%;
+    justify-content: center;
+    align-items: flex-start;
+}     
+ 
+#wrapper #frform_wrapper #fr #item #buttons {
+  background-color: #96c2b1;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  height: 50%;
+  border-radius: 50px;    
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-family: "Indie Flower";
+    justify-content: center;
+    align-items: flex-start;
+}        
+
+#wrapper #sec-Friends #requests {
+    width: 37.5%;
+    height: 43%;
+    margin: auto;
+    background-color: #bcf7e3;
+    border-radius: 50px;
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 53%;
+    transition: all 0.5s ease-out;
+}      
+
+#wrapper #sec-Friends #requests #fr {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 100%;
+    grid-gap: 3%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}          
+
+#wrapper #sec-Friends #requests #fr #frelist {
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-auto-rows: 20% ;
+    grid-gap: 2%;
+    position: absolute;
+    overflow: scroll;
+    top: 18%;
+}       
+      
+#wrapper #sec-Friends #requests #fr #frelist #item {
+    height: 100%;
+    width: 100%
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-template-columns: 78% 20%;
+    grid-gap: 2%;
+    justify-content: center;
+    align-items: flex-start;
+} 
+      
+#wrapper #sec-Friends #requests #fr #frelist #item #fraddbutton {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    background-color: #95ff44;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}      
+   
+#wrapper #sec-Friends #canv {
+    width: 37.5%;
+    height: 43%;
+    margin: auto;
+    background-color: #bcf7e3;
+    border-radius: 50px;
+    display: block;
+    position: absolute;
+    left: 52.5%;
+    top: 53%;
+    transition: all 0.5s ease-out;
+}      
+
+#wrapper #sec-Friends #canv #fr {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    background-color: #bcf7e3;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 100%;
+    grid-gap: 3%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+      
+#wrapper #sec-Friends #search {
+    width: 5%;
+    height: 10%;
+    margin: auto;
+    background-color: #95ff44;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    position: absolute;
+    left: 92%;
+    top: 40%;
+}       
+      
 </style>
 
 </head>
@@ -733,6 +941,8 @@ section {
 <body id="MainBody" >
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
   <div class = "login" id ="loginmain">
     <head>
@@ -845,7 +1055,39 @@ section {
   <section class="sec-Friends" id="sec-Friends">
       
     <h class = "userlog" style="color:black;font: 20px 'Indie Flower';width: 100%;position: absolute; top: 1%;left:2%">Logged in as: </h>
+     <div id="frform_wrapper">
+        <div id="fr">
+            <h style="font-size: 25px">Friends:</h>
+            <div id="flist">
+                <div id="item">
+                    <h style="font-size: 22px">bh</h>
+                    <button id="buttons" >Chat</button>
+                    <button id="buttons" >Mood</button>
+                </div>
+            </div>
+        </div>
+    </div>
       
+    <div class="input_container">
+        <input id = "searchbar" placeholder="Add Friends" type="text" name="Desc" class='input_field'>
+    </div>
+      
+    <div id="requests">
+        <div id="fr">
+            <h style="font-size: 25px">Requests:</h>
+            <div id="frelist">
+                
+            </div>
+        </div>
+    </div>
+      
+      <div id="canv">
+        <div id="fr">
+            
+        </div>
+    </div>
+      
+      <button id="search" >+</button>
   </section>
   <nav role="navigation" id="nav">
     <label class = "sidebar" for="nav-check" id="navlabel"></label>
@@ -960,7 +1202,7 @@ section {
           while (myNode.firstChild) {
             myNode.removeChild(myNode.lastChild);
           }
-        
+        console.log(result);
         var elements1 = "<div id='item'><div id='rate' class='moodcolor'>"
         //1
         var elements2 = "</div> <div id='desc'>"
@@ -1014,7 +1256,6 @@ section {
         var elements4 = "</div></div><div><button id='";
         var elements5 = "' class='removebutton' onclick='emitremove(this)'>-</button></div></div>;</div>";
         
-        
         function create(value, index) {
         var prior = value[1];
         var tail = value[2];
@@ -1035,6 +1276,56 @@ section {
             var prir = x[i].innerHTML;
           x[i].style.backgroundColor = varplanc[prir];
         };
+    };    
+       
+    function upadateFriends(result) { 
+        const myNode = document.getElementById("flist");
+          while (myNode.firstChild) {
+            myNode.removeChild(myNode.lastChild);
+          }
+        
+        var elements1 = "<div id=''item'><h style=''font-size: 22px'>"
+        //bh
+        var elements2 = "</h><button id='buttons' >Chat</button><button id='buttons' >Mood</button></div>"
+        
+        function create(value, index) {
+        var fuser = result[index];
+                
+        return $(elements1 + fuser + elements2);
+        };
+        
+        for (const property in result) {
+           var index = property;
+           var value =  result[property];
+             $("#flist").append(create(value, index));
+        } 
+        
+    };    
+        
+    function upadateReq(result) { 
+        const myNode = document.getElementById("flist");
+          while (myNode.firstChild) {
+            myNode.removeChild(myNode.lastChild);
+          }
+        
+        console.log(result.length);
+        
+        var elements1 = "<div id='item'><h style='font-size: 22px'>";
+        //bh
+        var elements2 = "</h><button id='fraddbutton'>+</button></div>";
+        
+        function create(value, index) {
+        var fuser = result[index];
+                
+        return $(elements1 + fuser + elements2);
+        };
+        
+        for (const property in result) {
+           var index = property;
+           var value =  result[property];
+             $("#frelist").append(create(value, index));
+        } 
+        
     };    
         
     regbutton.onclick = function(){
@@ -1079,6 +1370,13 @@ section {
         resetPlanner(usrtab["plans"]);
         resetMood(usrtab["moods"]);
         
+        console.log(usrtab["friends"]);
+        console.log(usrtab["friends"]["req"]);
+        console.log(usrtab["moods"]);
+        
+        upadateFriends(usrtab["friends"])
+        upadateReq(usrtab["friends"]["req"])
+        
         var x = document.getElementsByClassName("userlog");
         var i;
         for (i = 0; i < x.length; i++) {
@@ -1104,6 +1402,8 @@ section {
 	});
     
 	socket.on('logresult',function(result, userdata, usrtab){
+        console.log(usrtab);
+        
 		if (result[0] == true) {
             login(userdata, usrtab)
         } else {
@@ -1250,7 +1550,36 @@ section {
     });
         
     };
-          
+      
+        
+    //friends
+    var coll = document.getElementsByClassName("fcollapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+        
+    const searchadd = document.getElementById("search");
+        
+    searchadd.onclick = function(){
+        var search = document.getElementById("searchbar").value;
+        
+        socket.emit('checkBar', search, user);
+    };   
+        
+    socket.on('checkBarres',function(result){
+        //show result
+    });    
+        
 </script>   
 </div>
   
