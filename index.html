@@ -1055,6 +1055,9 @@ section {
   <section class="sec-Friends" id="sec-Friends">
       
     <h class = "userlog" style="color:black;font: 20px 'Indie Flower';width: 100%;position: absolute; top: 1%;left:2%">Logged in as: </h>
+      
+    <h style="color:red;font: 30px 'Indie Flower';width: 100%;text-align: center;position: absolute; opacity: 0" id = "friendstatus">Boi</h>
+      
      <div id="frform_wrapper">
         <div id="fr">
             <h style="font-size: 25px">Friends:</h>
@@ -1576,8 +1579,21 @@ section {
         socket.emit('checkBar', search, user);
     };   
         
+    function moodStatusUpdate(boole, message) {
+        var statusbar = document.getElementById("friendstatus");
+        if (boole == true) {
+            statusbar.style.color = "green";
+            statusbar.style.opacity = 1;
+            statusbar.innerHTML = message;
+        } else {
+            statusbar.style.color = "red";
+            statusbar.style.opacity = 1;
+            statusbar.innerHTML = message;
+        };
+    };     
+        
     socket.on('checkBarres',function(result){
-        //show result
+        moodStatusUpdate(result[0], result[1])
     });    
         
 </script>   
