@@ -599,27 +599,27 @@ section {
     margin: auto;
     background-color: var(--form_bg);
     display: grid;
-    grid-template-rows: 10% 90% ;
-    grid-gap: 2%;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 100%;
+    grid-gap: 3%;
     position: absolute;
     left: 2.5%;
     top: 2.5%;
-} 
+}   
       
 #wrapper #moodform_wrapper #mood #form {
-    width: 100%;
     height: 100%;
+    width: 100%;
     margin: auto;
     background-color: var(--form_bg);
     display: grid;
-    grid-template-columns: 10% 80% 10% ;
-    grid-gap: 2%;
-    position: absolute;
-}      
+    grid-template-columns: 7% 75% 10%;
+    grid-gap: 2.5%;
+}               
 
 #wrapper #moodform_wrapper #mood #list {
     width: 100%;
-    height: 100%;
+    height: 80%;
     margin: auto;
     background-color: var(--form_bg);
     display: grid;
@@ -627,27 +627,28 @@ section {
     grid-gap: 2%;
     position: absolute;
     overflow: scroll;
-} 
-
-#wrapper #planinput .input_container {
+    top: 18%;
+}
+      
+#wrapper #moodform_wrapper #mood #form .input_container {
     background-color: var(--input_bg);
     display: flex;
     align-items: center;
     padding-left: 20px;
 }      
       
-#wrapper #moodform_wrapper #mood .input_container:hover {
+#wrapper #moodform_wrapper #mood #form .input_container:hover {
     background-color: var(--input_hover);
 }
 
-#wrapper #moodform_wrapper #mood .input_container,
+#wrapper #moodform_wrapper #mood #form .input_container,
 #input_submit {
     height: 100%;
     border-radius: 30px;
     width: 100%;
 }      
       
-#wrapper #moodform_wrapper #mood .inputbox {
+#wrapper #moodform_wrapper #mood #form .inputbox {
     width: 100%;
     height: 100%;
     background-color: var(--form_bg);
@@ -657,7 +658,7 @@ section {
     align-items: flex-start;
 }     
 
-#wrapper #moodform_wrapper #mood .input_field {
+#wrapper #moodform_wrapper #mood #form .input_field {
     color: var(--icon_color);
     background-color: inherit;
     width: 90%;
@@ -665,21 +666,60 @@ section {
     font-size: 1.3rem;
     font-weight: 400;
     padding-left: 5px;
-}    
-      
-#wrapper #Addbutton {
-    width: 100%;
-    height: 100%;
+}
+
+#wrapper #moodform_wrapper #mood #form #addbutton {
+    width: 6%;
+    height: 10%;
     margin: auto;
     background-color: #95ff44;
-    border-radius: 50%;
+    border-radius: 50px;
     display: block;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 35px;
+    left:90%;
+}        
+
+#wrapper #moodform_wrapper #mood #item {
+    height: 100%;
+    width: 100%
+    margin: auto;
+    background-color: var(--form_bg);
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-gap: 2%;
+}
+      
+#wrapper #moodform_wrapper #mood #item #rate {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 50px;
-}      
+}  
+      
+#wrapper #moodform_wrapper #mood #item #desc {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--form_bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: black;
+}       
+      
       
 /*Friends*/
 .sec-Friends {
@@ -743,6 +783,8 @@ section {
       
       <h class = "userlog" style="color:black;font: 20px 'Indie Flower';width: 100%;position: absolute; top: 1%;left:2%">Logged in as: </h>
       
+      <h style="color:red;font: 40px 'Indie Flower';width: 100%;text-align: center;position: absolute; top: 3%; opacity: 0" id = "moodstatus">Boi</h>
+      
     <button class="collapsible" id="collapser">Open Graph</button>
     <div class="content">
       <div id="chartContainer" style="height: 300px; width: 100%;"></div>
@@ -750,23 +792,23 @@ section {
       
       <div id="moodform_wrapper">
         <div id="mood">
-            
             <div id="form" >
                 <div class="input_container">
-                    <input id = "prior" placeholder="#" type="number" name="priority" class='input_field' min = 1 max = 9 id="noinputmood">
+                    <input placeholder="#" type="number" name="priority" class='input_field' min = 1 max = 9 id="noinputmoodnumber">
                 </div>
 
                 <div class="input_container">
-                    <input id = "title" placeholder="Description" type="text" name="Desc" class='input_field'>
+                    <input id = "Desc" placeholder="Description" type="text" name="Desc" class='input_field'>
                 </div>
                 
-                <button id="Addbutton">+</button>
+                <button id="addbutton" >+</button>
             </div>
-            
-            <div id="list" >
-                 
+            <div id="list">
+                <div id="item">
+                    <div id="rate" class="moodcolor">1</div>
+                    <div id="desc">br</div>
+                </div>
             </div>
-            
         </div>
     </div>
       
@@ -775,6 +817,7 @@ section {
       
       <h class = "userlog" style="color:black;font: 20px 'Indie Flower';width: 100%;position: absolute; top: 1%;left:2%">Logged in as: </h>
       
+      <h style="color:red;font: 25px 'Indie Flower';width: 100%;text-align: center;position: absolute; top: 79%; opacity: 0" id = "planstatus">Boi</h>
       
     <div id="form_wrapper">
         <div id="planner">
@@ -834,11 +877,9 @@ section {
         for (i = 0; i < x.length; i++) {
           x[i].onmouseover = function() {
             this.style.background = colortab[colorscheme]["over"];
-            console.log("over");
           }
           x[i].onmouseout = function() {
             this.style.background = colortab[colorscheme]["out"];
-            console.log("out");
           }
         }
         
@@ -868,7 +909,6 @@ section {
         $(function(){
           $("nav a").click(function(){
             var name = $(this).attr("href");
-            console.log(name)
             adjustcolor(name)  
           })
         })
@@ -883,6 +923,7 @@ section {
     const logbutton = document.getElementById("loginbutton");
     const regbutton = document.getElementById("registerbutton");
     const addbutton = document.getElementById("AddPlanebutton");
+    const moodaddbutton = document.getElementById("addbutton");
 
     const varplanc = {};
     varplanc[1] = "#ccff00";
@@ -894,6 +935,67 @@ section {
     varplanc[7] = "#1d1238"; 
     varplanc[8] = "#1b0618"; 
     varplanc[9] = "#000000"; 
+     
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2",
+        title:{
+            text: "Mood graph",
+            horizontalAlign: "center",
+        },
+        data: [{        
+            type: "line",
+            indexLabelFontSize: 16,
+            connectNullData: true,
+            dataPoints: []
+        }]
+    });    
+       
+    chart.render();    
+        
+    function resetMood(result) { 
+        const myNode = document.getElementById("list");
+          while (myNode.firstChild) {
+            myNode.removeChild(myNode.lastChild);
+          }
+        
+        var elements1 = "<div id='item'><div id='rate' class='moodcolor'>"
+        //1
+        var elements2 = "</div> <div id='desc'>"
+       // br
+        var elements3 = "</div></div>"
+        
+        
+        function create(value, index) {
+            var prior = value[1];
+            var body = value[0];
+
+            return $(elements1 + prior + elements2 + body + elements3);
+        };
+        
+        result.forEach(function (value, index) {
+            $("#list").append(create(value, index));
+        });
+        
+        chart.options.data[0].dataPoints = [];
+        
+        result.forEach(function (value, index) {
+            var prior = parseInt(value[1]);
+            
+            chart.options.data[0].dataPoints.push({ y: prior});
+            
+            chart.render();
+        });
+                
+        var x = document.getElementsByClassName("moodcolor");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            var prir = parseInt(x[i].innerHTML);
+          x[i].style.backgroundColor = varplanc[prir];
+        };
+    };     
         
     function emitremove(that) {
         var eleno = that.getAttribute('id');
@@ -933,7 +1035,7 @@ section {
             var prir = x[i].innerHTML;
           x[i].style.backgroundColor = varplanc[prir];
         };
-    };  
+    };    
         
     regbutton.onclick = function(){
         var passdata = document.getElementById("field_password").value;
@@ -975,6 +1077,7 @@ section {
         $("#loginmain").children().hide();
         
         resetPlanner(usrtab["plans"]);
+        resetMood(usrtab["moods"]);
         
         var x = document.getElementsByClassName("userlog");
         var i;
@@ -1021,11 +1124,23 @@ section {
             $(this).val($(this).val().substr(0, maxchars));
         }
     });
+        
+    $('#noinputmoodnumber').keydown( function(e){
+        if ($(this).val().length >= maxchars) { 
+            $(this).val($(this).val().substr(0, maxchars));
+        }
+    });
+
+    $('#noinputmoodnumber').keyup( function(e){
+        if ($(this).val().length >= maxchars) { 
+            $(this).val($(this).val().substr(0, maxchars));
+        }
+    });    
     
     function checkPlan(Prior, Title, Body) {
-        if (Prior != "" || Prior != null) {
-            if (Title != "" || Title != null) {
-                if (Body != "" || Body != null) {
+        if (Prior.length > 0) {
+            if (Title.length > 0) {
+                if (Body.length > 0) {
                     return true;
                 } else {
                     return "Please enter a valid body";
@@ -1037,6 +1152,31 @@ section {
             return "Please enter a valid Priority";
         };   
     }; 
+       
+    function checkMood(Prior, desc) {
+        if (Prior.length > 0) {
+            if (desc.length > 0) {
+                return true;
+            } else {
+                return "Please enter a valid description";
+            };
+        } else { 
+            return "Please enter a valid mood rating";
+        };   
+    };     
+       
+    function planStatusUpdate(boole, message) {
+        var statusbar = document.getElementById("planstatus");
+        if (boole == true) {
+            statusbar.style.color = "green";
+            statusbar.style.opacity = 1;
+            statusbar.innerHTML = message;
+        } else {
+            statusbar.style.color = "red";
+            statusbar.style.opacity = 1;
+            statusbar.innerHTML = message;
+        };
+    };     
         
     addbutton.onclick = function(){
         var priordata = document.getElementById("prior").value;
@@ -1046,23 +1186,23 @@ section {
         var validate = checkPlan(priordata, titledata, bodydata) ;
         
         if (validate == true) {
+            document.getElementById("planstatus").style.opacity = 0;
             socket.emit('Planrequest', priordata, titledata, bodydata, user);
         } else {
-            //output error
+            planStatusUpdate(false, validate)
         };
     };    
     
     socket.on('Planupdate',function(result){
-		resetPlanner(result)
+		resetPlanner(result);
 	});
     
     const collapse = document.getElementById("collapser");
     const frame = document.getElementById("moodform_wrapper");
 
-      collapse.addEventListener("click", function() {
+    collapse.addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
-          console.log(content);
         if (content.style.maxHeight){
             content.style.maxHeight = null;
             content.style.bottom = "55%";
@@ -1077,37 +1217,38 @@ section {
             frame.style.height = "25%";
         } 
       });
+       
+    function moodStatusUpdate(boole, message) {
+        var statusbar = document.getElementById("moodstatus");
+        if (boole == true) {
+            statusbar.style.color = "green";
+            statusbar.style.opacity = 1;
+            statusbar.innerHTML = message;
+        } else {
+            statusbar.style.color = "red";
+            statusbar.style.opacity = 1;
+            statusbar.innerHTML = message;
+        };
+    };    
         
-    window.onload = function () {
-
-    var chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-        theme: "light2",
-        title:{
-            text: "Mood graph",
-            horizontalAlign: "center",
-        },
-        data: [{        
-            type: "line",
-            indexLabelFontSize: 16,
-            dataPoints: [
-                { y: 1 },
-                { y: 2 },
-                { y: 2 },
-                { y: 4 },
-                { y: 4 },
-                { y: 5 },
-                { y: 6 },
-                { y: 1 },
-                { y: 2 },
-                { y: 9 },
-                { y: 7 },
-                { y: 6 }
-            ]
-        }]
+    moodaddbutton.onclick = function(){
+        var priordata = document.getElementById("noinputmoodnumber").value;
+        var bodydata = document.getElementById("Desc").value;
+        
+        var validate = checkMood(priordata, bodydata) ;
+                
+        if (validate == true) {
+            var statusbar = document.getElementById("moodstatus").style.opacity = 0;
+            socket.emit('Moodrequest', priordata, bodydata, user);
+        } else {
+            moodStatusUpdate(false, validate)
+        };
+    };    
+        
+    socket.on('Moodupdate',function(result){
+        resetMood(result);
     });
-    chart.render();
-
+        
     };
           
 </script>   
